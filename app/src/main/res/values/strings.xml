@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Torrats</string>
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="added_to_widget_message">added to Widget</string>
+    <string name="add_widget_menu_option">Add to Widget</string>
+
+    <string name="calendar_list_title">Event list</string>
+    <string name="no_data_available">No new incoming events</string>
+
+    <string name="calendar_detail_title">Event detail</string>
+    <string name="application_name_exo_player">AppVideo</string>
+    <string name="video_player_title">Watch video</string>
+</resources>
