@@ -22,7 +22,7 @@ import es.ibrands.torrats.widget.CalendarAppWidgetProvider;
 /**
  * Created by pablomoreno on 16/03/18.
  */
-public class CalendarDetailActivity extends AppCompatActivity
+public class CalendarDetailActivity extends BaseActivity
 {
     private static final String TAG = CalendarDetailActivity.class.getSimpleName();
     private static final String CALENDAR_DETAIL_ROTATION = "calendarDetailRotation";
@@ -54,9 +54,20 @@ public class CalendarDetailActivity extends AppCompatActivity
         }
 
         if (savedInstanceState == null) {
-            String descriptionJson = getIntent().getStringExtra(CalendarAdapter.DESCRIPTION);
             Bundle bundle = new Bundle();
-            bundle.putString(CalendarDetailFragment.CALENDAR_DATA, descriptionJson);
+
+            String titleJson = getIntent().getStringExtra(CalendarAdapter.TITLE);
+            bundle.putString(CalendarDetailFragment.CALENDAR_TITLE, titleJson);
+
+            String descriptionJson = getIntent().getStringExtra(CalendarAdapter.DESCRIPTION);
+            bundle.putString(CalendarDetailFragment.CALENDAR_DESCRIPTION, descriptionJson);
+
+            String imageJson = getIntent().getStringExtra(CalendarAdapter.IMAGE);
+            bundle.putString(CalendarDetailFragment.CALENDAR_IMAGE, imageJson);
+
+            String startAtJson = getIntent().getStringExtra(CalendarAdapter.START_AT);
+            bundle.putString(CalendarDetailFragment.CALENDAR_START_AT, startAtJson);
+
             bundle.putBoolean(CalendarDetailFragment.PANE, twoPane);
 
             CalendarDetailFragment calendarDetailFragment = new CalendarDetailFragment();

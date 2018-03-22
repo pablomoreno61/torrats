@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="es.ibrands.torrats">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Torrats">
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name="es.ibrands.torrats.activity.CalendarListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,7 +29,29 @@
             </intent-filter>
         </activity>
         <activity android:name="es.ibrands.torrats.activity.CalendarDetailActivity" />
+
+        <activity android:name="es.ibrands.torrats.activity.PhotoGalleryListActivity" />
+        <activity
+            android:name=".activity.PhotoGalleryDetailActivity"
+            android:parentActivityName=".activity.PhotoGalleryListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.es.ibrands.torrats.items" />
+            </intent-filter>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.PhotoGalleryListActivity" />
+        </activity>
+
         <activity android:name="es.ibrands.torrats.activity.VideoPlayerActivity" />
+
+        <service android:name=".data.UpdaterService"
+            android:exported="false" />
+
+        <provider android:name=".data.ItemsProvider"
+            android:authorities="es.ibrands.torrats"
+            android:exported="false" />
 
         <receiver android:name="es.ibrands.torrats.widget.CalendarAppWidgetProvider">
             <intent-filter>

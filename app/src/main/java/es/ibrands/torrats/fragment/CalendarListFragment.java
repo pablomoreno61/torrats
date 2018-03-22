@@ -25,14 +25,12 @@ import es.ibrands.torrats.R;
 import es.ibrands.torrats.activity.CalendarListActivity;
 import es.ibrands.torrats.adapter.CalendarAdapter;
 import es.ibrands.torrats.model.CalendarError;
-import es.ibrands.torrats.model.CalendarEvent;
 import es.ibrands.torrats.model.CalendarList;
 import es.ibrands.torrats.util.DateDeserializer;
 import es.ibrands.torrats.util.TorratsApiInterface;
 import es.ibrands.torrats.util.SimpleIdlingResource;
 import es.ibrands.torrats.util.Utility;
 
-import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -45,7 +43,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by pablomoreno on 17/03/18.
@@ -54,8 +51,7 @@ public class CalendarListFragment extends Fragment
 {
     private static final String TAG = CalendarListFragment.class.getSimpleName();
     private static final String API_URL = "http://www.torrats.com/wp-json/tribe/events/v1/";
-    // http://torrats.com/wp-json/tribe/events/v1/events
-    // http://torrats.com/wp-json/tribe/events/v1/events/616
+
     private static Retrofit retrofit = null;
 
     SimpleIdlingResource idlingResource;
@@ -71,7 +67,6 @@ public class CalendarListFragment extends Fragment
 
     private TorratsApiInterface torratsApiInterface;
     private CalendarList mCalendarList;
-    private CalendarError mCalendarError;
     private boolean mTwoPane;
     private CalendarAdapter calendarAdapter;
 

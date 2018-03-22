@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="recipe_thumbnail_image_view_layout_margin">2dp</dimen>
-    <dimen name="recipe_thumbnail_image_view_max_width">150dp</dimen>
-    <dimen name="recipe_name_list_text_view_text_size">25sp</dimen>
-    <dimen name="recipe_name_list_text_view_margin_start">10dp</dimen>
-    <dimen name="recipe_name_list_text_view_margin_top">20dp</dimen>
-    <dimen name="servings_text_view_size">20sp</dimen>
-    <dimen name="servings_text_view_margin_start">10dp</dimen>
+    <dimen name="calendar_list_thumbnail_image_view_layout_margin">2dp</dimen>
+    <dimen name="calendar_list_thumbnail_image_view_max_width">150dp</dimen>
+    <dimen name="calendar_title_list_text_view_text_size">25sp</dimen>
+    <dimen name="calendar_title_list_text_view_margin_start">10dp</dimen>
+    <dimen name="calendar_title_list_text_view_margin_top">20dp</dimen>
+    <dimen name="start_at_text_view_size">20sp</dimen>
+    <dimen name="start_at_text_view_margin_start">10dp</dimen>
 
     <dimen name="double_arc_progress_inside_arc_radius">20dp</dimen>
     <dimen name="double_arc_progress_outside_arc_radius">40dp</dimen>
@@ -17,6 +17,20 @@
     <dimen name="ingredients_list_text_view_text_size">15sp</dimen>
     <dimen name="step_recycler_view_margin_end">10dp</dimen>
     <dimen name="step_recycler_view_margin_start">10dp</dimen>
+
+    <!--GALLERY-->
+    <dimen name="fab_margin">24dp</dimen>
+    <dimen name="detail_title_text_size">32sp</dimen>
+    <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
+    <dimen name="detail_body_text_size">22sp</dimen>
+
+    <dimen name="detail_body_bottom_margin">88dp</dimen>
+    <dimen name="detail_card_top_margin">@dimen/detail_photo_height</dimen>
+    <dimen name="detail_card_max_width">10000dp</dimen> <!-- force match_parent -->
+    <dimen name="detail_inner_horiz_margin">16dp</dimen>
+    <dimen name="detail_metabar_title_bottom_padding">4dp</dimen>
+    <dimen name="detail_metabar_vert_padding">16dp</dimen>
+    <dimen name="detail_photo_height">304dp</dimen>
 
     <dimen name="widget_linear_layout_padding">8dp</dimen>
     <dimen name="widget_layout_margin">5dp</dimen>

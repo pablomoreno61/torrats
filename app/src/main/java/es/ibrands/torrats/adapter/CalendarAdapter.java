@@ -35,7 +35,11 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Recipe
 {
     private static final String TAG = CalendarAdapter.class.getSimpleName();
     public static final String CALENDAR_LIST = "calendarEventList";
+
+    public static final String TITLE = "title";
     public static final String DESCRIPTION = "description";
+    public static final String IMAGE = "image";
+    public static final String START_AT = "startAt";
 
     private Context context;
     private List<CalendarEvent> calendarEventList;
@@ -88,10 +92,20 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Recipe
             String jsonCalendar = gson.toJson(calendarEventList.get(position));
             sharedPreferences.edit().putString(CALENDAR_LIST, jsonCalendar).apply();
 
-            String jsonDescription = gson.toJson(calendarEventList.get(position).getDescription());
-
             Intent intent = new Intent(context, CalendarDetailActivity.class);
+
+            String jsonTitle = gson.toJson(calendarEventList.get(position).getTitle());
+            intent.putExtra(TITLE, jsonTitle);
+
+            String jsonDescription = gson.toJson(calendarEventList.get(position).getDescription());
             intent.putExtra(DESCRIPTION, jsonDescription);
+
+            String jsonImage = gson.toJson(calendarEventList.get(position).getImage().getUrl());
+            intent.putExtra(IMAGE, jsonImage);
+
+            String jsonStartAt = gson.toJson(calendarEventList.get(position).getStartAt());
+            intent.putExtra(START_AT, jsonStartAt);
+
             context.startActivity(intent);
         }
     }
@@ -118,7 +132,7 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarAdapter.Recipe
         DateFormat dateFormat = android.text.format.DateFormat.getDateFormat(context);
         recipeViewHolder.startAtText.setText(dateFormat.format(calendarEventList.get(position).getStartAt()));
 
-        String imageUrl = calendarEventList.get(position).getImage();
+        String imageUrl = calendarEventList.get(position).getImage().getUrl();
 
         // throws an error if empty path
         if (!imageUrl.equals("")) {

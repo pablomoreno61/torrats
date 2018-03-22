@@ -13,7 +13,7 @@ import es.ibrands.torrats.util.SimpleIdlingResource;
 /**
  * Created by pablomoreno on 16/03/18.
  */
-public class CalendarListActivity extends AppCompatActivity
+public class CalendarListActivity extends BaseActivity
 {
     private static boolean mTwoPane;
 

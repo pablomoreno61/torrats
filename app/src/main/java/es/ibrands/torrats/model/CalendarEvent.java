@@ -17,7 +17,7 @@ public class CalendarEvent
 
     @SerializedName("image")
     @Expose
-    private String image;
+    private Image image;
 
     @SerializedName("start_date")
     @Expose
@@ -47,12 +47,12 @@ public class CalendarEvent
         this.title = title;
     }
 
-    public String getImage()
+    public Image getImage()
     {
         return image;
     }
 
-    public void setImage(String image)
+    public void setImage(Image image)
     {
         this.image = image;
     }

@@ -22,12 +22,11 @@ public class DateDeserializer implements JsonDeserializer<Date>
     @Override
     public Date deserialize(JsonElement element, Type arg1, JsonDeserializationContext arg2) throws JsonParseException
     {
-Log.d(TAG, "deserialize");
         String date = element.getAsString();
-Log.d(TAG, date.toString());
+
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         format.setTimeZone(TimeZone.getTimeZone("UTC"));
-Log.d(TAG, date.toString());
+
         try {
             return format.parse(date);
         } catch (ParseException e) {
