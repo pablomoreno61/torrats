@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "221141979755",
+    "firebase_url": "https://torrats-e6dcb.firebaseio.com",
+    "project_id": "torrats-e6dcb",
+    "storage_bucket": "torrats-e6dcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221141979755:android:ec39f3cce8cf6a8b",
+        "android_client_info": {
+          "package_name": "es.ibrands.torrats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221141979755-bv594r0k45jn9jp12et8ovegmb7hfenm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGoG8AXY5ZEbxs-ncyDuuHgM8OZ1EcoyI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

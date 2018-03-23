@@ -22,15 +22,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="es.ibrands.torrats.activity.CalendarListActivity">
+        <activity android:name=".activity.CalendarListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="es.ibrands.torrats.activity.CalendarDetailActivity" />
+        <activity android:name=".activity.CalendarDetailActivity" />
 
-        <activity android:name="es.ibrands.torrats.activity.PhotoGalleryListActivity" />
+        <activity android:name=".activity.PhotoGalleryListActivity" />
         <activity
             android:name=".activity.PhotoGalleryDetailActivity"
             android:parentActivityName=".activity.PhotoGalleryListActivity">
@@ -44,7 +44,7 @@
                 android:value=".activity.PhotoGalleryListActivity" />
         </activity>
 
-        <activity android:name="es.ibrands.torrats.activity.VideoPlayerActivity" />
+        <activity android:name=".activity.VideoPlayerActivity" />
 
         <service android:name=".data.UpdaterService"
             android:exported="false" />
@@ -53,7 +53,7 @@
             android:authorities="es.ibrands.torrats"
             android:exported="false" />
 
-        <receiver android:name="es.ibrands.torrats.widget.CalendarAppWidgetProvider">
+        <receiver android:name=".widget.CalendarAppWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
