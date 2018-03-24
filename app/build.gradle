@@ -1,13 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Torrats'
+            keyPassword 'torrats'
+            storeFile file("$rootDir/keystore.jks")
+            storePassword 'torrats'
+        }
+    }
     compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '26.0.3'
     defaultConfig {
+        applicationId "es.ibrands.torrats"
         vectorDrawables {
             useSupportLibrary = true
         }
-        applicationId "es.ibrands.torrats"
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
@@ -19,6 +27,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -26,9 +35,8 @@ android {
 dependencies {
     compile 'com.google.firebase:firebase-core:11.8.0'
     compile 'com.google.firebase:firebase-messaging:11.8.0'
-
     implementation "com.android.support:support-vector-drawable:$androidSupportVersion"
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -54,8 +62,8 @@ dependencies {
     androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
     androidTestCompile 'com.android.support.test:rules:1.0.1'
     androidTestCompile 'com.android.support.test:runner:1.0.1'
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2')
-    androidTestCompile "com.android.support.test.espresso.idling:idling-concurrent:3.0.1"
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2'
+    androidTestCompile 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
     compile 'com.github.amanjeetsingh150:CoolProgressViews:1.0'
     compile 'com.android.volley:volley:1.1.0'
 }

@@ -152,8 +152,8 @@ public class CalendarListFragment extends Fragment
                     mTwoPane = CalendarListActivity.getPanelMode();
                     Log.d(TAG, "getPanelMode");
                     if (mTwoPane) {
-                        Log.d(TAG, "mTwoPane");
-                        // tablet mode
+                        Log.d(TAG, "tablet mode");
+
                         int noOfColumns = calculateGridNoOfColumns();
 
                         GridLayoutManager gridLayoutManager = new GridLayoutManager(
@@ -163,8 +163,8 @@ public class CalendarListFragment extends Fragment
 
                         calendarRecyclerView.setLayoutManager(gridLayoutManager);
                     } else {
-                        Log.d(TAG, "mTwoPane else");
-                        // mobile mode
+                        Log.d(TAG, "mobile mode");
+
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(
                             getActivity()
                         );

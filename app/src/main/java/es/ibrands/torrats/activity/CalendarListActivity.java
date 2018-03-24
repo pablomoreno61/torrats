@@ -39,9 +39,7 @@ public class CalendarListActivity extends BaseActivity
         getSupportActionBar().setTitle(R.string.calendar_list_title);
 
         mTwoPane = false;
-        if (findViewById(R.id.calendar_list_tablet_container) != null) {
-            mTwoPane = true;
-        }
+        mTwoPane = findViewById(R.id.calendar_list_tablet_container) != null;
 
         getIdlingResource();
     }
